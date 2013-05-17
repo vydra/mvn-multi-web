@@ -2,7 +2,7 @@
 *.iml
 .idea
 
-**/target/**
+target/
 
 # Package Files #
 *.jar

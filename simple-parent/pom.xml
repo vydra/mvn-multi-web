@@ -1,47 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
                              http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-  	<groupId>org.sonatype.mavenbook.multispring</groupId>
-  	<artifactId>parent</artifactId>
-  	<version>0.8-SNAPSHOT</version>
-  </parent>
-  <artifactId>simple-parent</artifactId>
-  <packaging>pom</packaging>
-  <name>Multi-Spring Chapter Simple Parent Project</name>
- 
-  <modules>
-    <module>simple-command</module>
-    <module>simple-model</module>
-    <module>simple-weather</module>
-    <module>simple-persist</module>
-    <module>simple-webapp</module>
-  </modules>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.sonatype.mavenbook.multispring</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.8-SNAPSHOT</version>
+    </parent>
+    <artifactId>simple-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>Multi-Spring Chapter Simple Parent Project</name>
 
-  <build>
-    <pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
-        </configuration>
-      </plugin>
-    </plugins>
-    </pluginManagement>
-  </build>
+    <modules>
+        <module>simple-command</module>
+        <module>simple-model</module>
+        <module>simple-weather</module>
+        <module>simple-persist</module>
+        <module>simple-webapp</module>
+    </modules>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <properties>
+        <junit.version>4.11</junit.version>
+        <failsafe.plugin.version>2.12.4</failsafe.plugin.version>
+        <hsqldb.version>1.8.0.7</hsqldb.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Intra-project dependencies firsr -->
+            <dependency>
+                <groupId>org.sonatype.mavenbook.multispring</groupId>
+                <artifactId>simple-model</artifactId>
+                <version>0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sonatype.mavenbook.multispring</groupId>
+                <artifactId>simple-weather</artifactId>
+                <version>0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sonatype.mavenbook.multispring</groupId>
+                <artifactId>simple-persist</artifactId>
+                <version>0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sonatype.mavenbook.multispring</groupId>
+                <artifactId>simple-command</artifactId>
+                <version>0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sonatype.mavenbook.multispring</groupId>
+                <artifactId>simple-webapp</artifactId>
+                <version>0.8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>${hsqldb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 </project>
