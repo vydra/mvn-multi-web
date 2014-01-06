@@ -87,7 +87,7 @@ test:
   - factory template:
       path: simple-parent/simple-command
       script:
-      "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
+      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
         \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-command\"\
         ; done" 
 
