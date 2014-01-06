@@ -72,7 +72,7 @@ test:
   
 #################################################################
 
-  machines: 8
+  machines: 4
 
 #  scripts:
 #  - test script template:
