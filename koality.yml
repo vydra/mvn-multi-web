@@ -25,10 +25,27 @@ setup:
 
 compile:
   scripts:
-  - compile script template:
-      path: .
-      script:
-        mvn compile
+  - mvn compile 0:
+      script: mvn compile
+  - mvn compile 1:
+      path: simple-parent/simple-webapp
+      script: mvn compile
+  - mvn compile 2:
+      path: simple-parent
+      script: mvn compile
+  - mvn compile 3:
+      path: simple-parent/simple-model
+      script: mvn compile
+  - mvn compile 4:
+      path: simple-parent/simple-weather
+      script: mvn compile
+  - mvn compile 5:
+      path: simple-parent/simple-command
+      script: mvn compile
+  - mvn compile 6:
+      path: simple-parent/simple-persist
+      script: mvn compile
+ 
 #### Delete the above compile section to use the generated compile section ####
 
 
