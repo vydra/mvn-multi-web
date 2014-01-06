@@ -10,12 +10,12 @@ setup:
 # Defines databases used for your tests. They are local to the VMs the tests are run on.
 # Currently, only postgres and mysql are supported. This configuration includes both.
 - databases:
-  - mysql:
-    - name: test_db
-      username: test_user
-  - postgres:
-    - name: test_db
-      username: test_user
+#  - mysql:
+#    - name: test_db
+#      username: test_user
+#  - postgres:
+#    - name: test_db
+#      username: test_user
 
 # Arbitrary scripts to run that were not covered earlier.
 - scripts:
@@ -26,25 +26,7 @@ setup:
 compile:
   scripts:
   - mvn compile 0:
-      script: mvn compile
-  - mvn compile 1:
-      path: simple-parent/simple-webapp
-      script: mvn compile
-  - mvn compile 2:
-      path: simple-parent
-      script: mvn compile
-  - mvn compile 3:
-      path: simple-parent/simple-model
-      script: mvn compile
-  - mvn compile 4:
-      path: simple-parent/simple-weather
-      script: mvn compile
-  - mvn compile 5:
-      path: simple-parent/simple-command
-      script: mvn compile
-  - mvn compile 6:
-      path: simple-parent/simple-persist
-      script: mvn compile
+      script: mvn install -DskipTests=true
  
 #### Delete the above compile section to use the generated compile section ####
 
