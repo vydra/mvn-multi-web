@@ -9,7 +9,7 @@ import org.sonatype.mavenbook.weather.YahooParser;
 
 public class ZZZYahooParserTestFive extends TestCase {
 
-	public YahooParserTest(String name) {
+	public ZZZYahooParserTestFive(String name) {
 		super(name);
 	}
 	

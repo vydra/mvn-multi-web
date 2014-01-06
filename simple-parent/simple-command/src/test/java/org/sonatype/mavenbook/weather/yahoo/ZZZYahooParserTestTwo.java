@@ -9,9 +9,7 @@ import org.sonatype.mavenbook.weather.YahooParser;
 
 public class ZZZYahooParserTestTwo extends TestCase {
 
-	public YahooParserTest(String name) {
-		super(name);
-	}
+
 	
 	public void testParser() throws Exception {
 		InputStream nyData = 
