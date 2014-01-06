@@ -26,7 +26,7 @@ setup:
 compile:
   scripts:
   - mvn compile 0:
-      script: mvn install -DskipTests=true
+      script: mvn clean install -DskipTests=true
  
 #### Delete the above compile section to use the generated compile section ####
 
@@ -38,57 +38,39 @@ test:
 
 # Following this is our inferred guess as to what your factory section should look like.
 #################################################################
-#  factories:
-#  - factory .:
-#      path: .
-#      script:
-#      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
-#        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: .\"; done"
-#  - factory simple-parent/simple-webapp:
-#      path: simple-parent/simple-webapp
-#      script:
-#      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
-#        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-webapp\"\
-#        ; done"
-#  - factory simple-parent:
-#      path: simple-parent
-#      script:
-#      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
-#        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent\"\
-#        ; done"
-#  - factory simple-parent/simple-model:
-#      path: simple-parent/simple-model
-#      script:
-#      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
-#        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-model\"\
-#        ; done"
-#  - factory simple-parent/simple-weather:
-#      path: simple-parent/simple-weather
-#      script:
-#      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
-#        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-weather\"\
-#        ; done"
-#  - factory simple-parent/simple-command:
-#      path: simple-parent/simple-command
-#      script:
-#      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
-#        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-command\"\
-#        ; done"
-#  - factory simple-parent/simple-persist:
-#      path: simple-parent/simple-persist
-#      script:
-#      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
-#        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-persist\"\
-#        ; done"
-#  
-#################################################################
   factories:
-  - factory template:
+  - factory simple-parent/simple-webapp:
+      path: simple-parent/simple-webapp
+      script:
+      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
+        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-webapp\"\
+        ; done"
+  - factory simple-parent/simple-model:
+      path: simple-parent/simple-model
+      script:
+      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
+        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-model\"\
+        ; done"
+  - factory simple-parent/simple-weather:
+      path: simple-parent/simple-weather
+      script:
+      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
+        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-weather\"\
+        ; done"
+  - factory simple-parent/simple-command:
       path: simple-parent/simple-command
       script:
       - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
         \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-command\"\
-        ; done" 
+        ; done"
+  - factory simple-parent/simple-persist:
+      path: simple-parent/simple-persist
+      script:
+      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
+        \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-persist\"\
+        ; done"
+  
+#################################################################
 
   machines: 2
 
