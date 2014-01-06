@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 import org.sonatype.mavenbook.weather.model.Weather;
 import org.sonatype.mavenbook.weather.YahooParser;
 
-public class YahooParserTest extends TestCase {
+public class ZZZYahooParserTestFive extends TestCase {
 
 	public YahooParserTest(String name) {
 		super(name);
