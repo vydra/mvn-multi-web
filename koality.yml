@@ -1,6 +1,6 @@
 # Note that all packages and scripts will be installed/run in their order of appearance.
 # Please look at our documentation page for more information. You can find it at https://koalitycode.com/documentation?view=yaml
-
+#
 languages:
   jvm: 1.6
 setup:
