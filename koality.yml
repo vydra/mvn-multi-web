@@ -37,7 +37,7 @@ test:
 # Factory scripts that will output test scripts to be run in parallel.
 
 # Following this is our inferred guess as to what your factory section should look like.
-#################################################################
+################################################################
   factories:
   - factory simple-parent/simple-webapp:
       path: simple-parent/simple-webapp
