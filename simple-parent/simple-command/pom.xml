@@ -22,6 +22,11 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <testFailureIgnore>true</testFailureIgnore>
+
+                <includes>
+                    <include>**/*IT.java</include>
+                </includes>
+
         </configuration>
       </plugin>
       <plugin>
