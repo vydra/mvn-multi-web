@@ -1,7 +1,7 @@
 # Note that all packages and scripts will be installed/run in their order of appearance.
 # Please look at our documentation page for more information. You can find it at https://koalitycode.com/documentation?view=yaml
 
-languages:
+languages: 
   jvm: 1.6
 setup:
 - packages:
@@ -60,9 +60,15 @@ test:
   - factory simple-parent/simple-command:
       path: simple-parent/simple-command
       script:
-      - "find . -name \"*[tT]est*.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
+      - "find . -name \"*[tT]est.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
         \ read java; do echo -e \"- mvn -Dtest=$java test:\n    path: simple-parent/simple-command\"\
         ; done"
+  - factory simple-parent/simple-command-it:
+        path: simple-parent/simple-command
+        script:
+        - "find . -name \"*IT.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
+          \ read java; do echo -e \"- mvn -Dit.test=$java integration-test:\n    path: simple-parent/simple-command\"\
+          ; done"
   - factory simple-parent/simple-persist:
       path: simple-parent/simple-persist
       script:
