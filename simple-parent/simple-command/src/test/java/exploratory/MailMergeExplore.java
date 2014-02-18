@@ -11,7 +11,7 @@ import java.util.Collection;
 import static junit.framework.Assert.*;
 
 @RunWith(Parameterized.class)
-public class MailMegeExplore {
+public class MailMergeExplore {
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
