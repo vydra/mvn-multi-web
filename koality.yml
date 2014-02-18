@@ -67,7 +67,7 @@ test:
         path: simple-parent/simple-command
         script:
         - "find . -name \"*IT.java\" | sed \"s/.*\\/\\(.*\\).java/\\1/\" | while\
-          \ read java; do echo -e \"- mvn -Dskip.surefire.tests=true -Dit.test=$java integration-test:\n    path: simple-parent/simple-command\"\
+          \ read java; do echo -e \"- mvn -Dskip.surefire.tests=true -Dit.test=$java verify:\n    path: simple-parent/simple-command\"\
           ; done"
   - factory simple-parent/simple-command-explore-it:
           path: .
