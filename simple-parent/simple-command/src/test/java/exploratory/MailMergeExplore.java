@@ -16,7 +16,6 @@ public class MailMergeExplore {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-
                 {"[t1]", System.getProperty("value","abc")}
         });
     }
